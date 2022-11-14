@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div id="mainCnt" class="container">
+
+        <div id="editPage" class="">
+            <div id="editTopBar">
+                <div id="backArrowDiv">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                </div>
+                <div id="delFldDiv">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-trash" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="form-group mid-font-size off-white-cl mt-2">
+                <label for="editFldInp" class="small-head-font">FOLDER NAME</label>
+                <input type="email" class="def-inp-style def-top-small-margin form-control " id="editFldInp" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+            </div>
+
+            <div class="def-top-big-margin">
+                <span class="small-head-font">LINKS IN FOLDER</span>
+                <div id="editPageUrlList" class="def-top-small-margin">
+                    <!--               <div class="editInpGroup input-group" uuid="uuid-1">
+                        <input type="text" class="editInp list-inp-style form-control" aria-describedby="">
+                        <div class="editInpDel">
+                            <img src="/images/delete.svg" alt="">
+                        </div>
+                    </div> -->
+
+
+                </div>
+            </div>
+
+            <div class="d-flex def-top-big-margin">
+                <div id="saveFldBtn" class="def-btn-style"><span>DONE</span></div>
+                <!--<button id="saveFldBtn" type="button" class="def-btn-style btn">Done</button>-->
+            </div>
+        </div>
+
+        <div id="saveNewFld">
+
+            <div id="topBar">
+                <img src="logo.png" alt="">
+                <div class="d-flex">
+                    <p id="headTxt">Roma</p>
+                </div>
+            </div>
+            <span class="small-head-font">ADD TAB TO NEW FOLDER </span><span class="small-head-font-sub"></span>
+            <div class="input-group def-top-small-margin">
+                <input id="newFldInp" type="text" class="form-control def-inp-style"
+                    placeholder="Add tab to new folder" aria-label="Add to new folder"
+                    aria-describedby="basic-addon2">
+                <span id="newFldInpTxt" class="input-group-text button-text" id="basic-addon2">DONE</span>
+            </div>
+
+
+            <div id="savedFld">
+                <span class="small-head-font">EXISTING FOLDERS </span><span class="small-head-font-sub">(Click to open all tabs)</span>
+                <div id="fldParent" class="fldRow">
+                    <!-- <div class="fldItm half-width">
+                        <div class="fldBody">
+
+                            <div class="fldName">
+                                <p>asl;dkfja;sldfkj;alskdf;alskdf;alkjdsf</p>
+                            </div>
+                            <div class="fldItmNum">
+                                <p>3</p>
+                            </div>
+
+                            <div class="fldEdit">
+                                <img src="/images/dots.svg" alt="">
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+
+        <script src="/js/popup.js"></script>
+        <script src="/js/jquery.js"></script>
+    </div>
+</body>
+
+</html>
