@@ -6,8 +6,24 @@ let currOpenUuid = {};
 document.addEventListener("DOMContentLoaded", async function () {
     console.log("popup js loaded");
 
+    // test method todo remove this
+    // click on edit page
+    function myAlertTop(){
+        $(".myAlert-top").show();
+        setTimeout(function(){
+            $(".myAlert-top").hide();
+        }, 2000);
+    }
+
+
     // load the master json
     loadMasterJson(displayExistingFolders);
+
+    $("#newFldInp").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#newFldInpTxt").click();
+        }
+    });
 
     // click on open all url
     $("#fldParent").on("click", ".fldItm", function (e) {
@@ -69,9 +85,27 @@ document.addEventListener("DOMContentLoaded", async function () {
     });
 
     $("#delFldDiv").on("click", function () {
-        console.log('delte folder clicked');
-        delFldInMJAndSave();
+        console.log('delete folder clicked');
+        showModal();
+        showOverlay();
     });
+
+    $('#CMOkBtn').on('click', function (){
+        hideModal();
+        hideOverlay();
+        if (currOpenUuid) {
+            delete masterJson[currOpenUuid];
+            saveMJ();
+            closeEditPg();
+        } else {
+            //todo show err
+        }
+    })
+
+    $('.cancelModal').on('click', function (){
+        hideModal();
+        hideOverlay();
+    })
 
     // click on acc fldItm
     $("#accExistingFldHld").on("click", ".accExistingFld", async (e) => {
@@ -95,11 +129,20 @@ document.addEventListener("DOMContentLoaded", async function () {
             addUrlToFldInMJ(_uuid, _url);
             displayExistingFolders();
             saveMJ();
+            $("#newFldInp").val('');
         } else {
             console.error('you should add a name to continue');
         }
     });
 });
+
+function showAlert(msg) {
+    if(msg) {
+        $('#alertBox').text(msg);
+    } else {
+        $('#alertBox').text('Success');
+    }
+}
 
 function createNewFLd(_name) {
     let uuid = getUuid();
@@ -229,11 +272,7 @@ function changeFldName(_uuid, _name) {
 }
 
 function delFldInMJAndSave() {
-    if (currOpenUuid) {
-        delete masterJson[currOpenUuid];
-        saveMJ();
-        closeEditPg();
-    }
+
 }
 
 // open all the valid urls in the array
@@ -357,4 +396,16 @@ function tempFunction() {
         }
     }
     saveMJ(obj)
+}
+function showOverlay() {
+    $("#overlay").css('display', 'block');
+}
+function hideOverlay() {
+    $("#overlay").css('display', 'none');
+}
+function showModal() {
+    $("#confirmModal").css('display', 'flex');
+}
+function hideModal() {
+    $("#confirmModal").css('display', 'none');
 }
